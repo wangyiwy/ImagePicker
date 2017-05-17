@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ImagePicker</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="title_menu_done">Done</string>
+    <string name="button_preview">PreView</string>
+    <string name="all_images">All Images</string>
+    <string name="select_limit_tip">Up to %d images can be selected</string>
+    <string name="full_image_temp">Full Image</string>
+    <string name="full_image">Full Image (%s)</string>
+    <string name="select">Select</string>
+    <string name="no_camera_permission">No Camera Permission</string>
+    <string name="no_sdcard_permission">No SD card Permission</string>
+    <string name="file_provider_name" translatable="false">me.wangyi.imagepicker.provider</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ImagePicker</string>
+    <string name="all_images">全部图片</string>
+    <string name="button_preview">预览</string>
+    <string name="choose_image">选择图片</string>
+    <string name="full_image">原图(%s)</string>
+    <string name="full_image_temp">原图</string>
+    <string name="no_camera_permission">没有相机权限</string>
+    <string name="no_sdcard_permission">没有SD卡权限</string>
+    <string name="select">选择</string>
+    <string name="select_limit_tip">最多只能选择%d张图片</string>
+    <string name="title_menu_done">完成</string>
+</resources>
