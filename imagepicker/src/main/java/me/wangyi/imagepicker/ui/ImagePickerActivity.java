@@ -411,9 +411,9 @@ public class ImagePickerActivity extends AppCompatActivity implements View.OnCli
         intent.setDataAndType(uri, "image/*");
         intent.putExtra("crop", "true");
         intent.putExtra("aspectX", 1);
+        intent.putExtra("aspectY", 1);
         intent.putExtra("scale", true);
         intent.putExtra("scaleUpIfNeeded", true);
-        intent.putExtra("aspectY", 1);
         intent.putExtra("outputX", mCropOutputX);
         intent.putExtra("outputY", mCropOutputY);
         intent.putExtra("return-data", false);

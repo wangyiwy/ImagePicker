@@ -60,7 +60,9 @@ public class ImageAdapter extends BaseAdapter {
             holder = (ImageHolder) convertView.getTag();
         }
         Image image = mImageList.get(position);
-        ImagePicker.imageLoader.displayImage(holder.ivImage, image);
+        if (ImagePicker.imageLoader != null) {
+            ImagePicker.imageLoader.displayImage(holder.ivImage, image);
+        }
         holder.itemView.setTag(R.id.holder_tag, position);
 
         holder.masker.setVisibility(image.isSelected() ? View.VISIBLE : View.GONE);

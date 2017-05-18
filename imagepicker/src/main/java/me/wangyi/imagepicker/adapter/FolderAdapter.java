@@ -64,7 +64,7 @@ public class FolderAdapter extends BaseAdapter {
         holder.tvFolderPath.setText(folder.getPath());
         holder.tvFolderSize.setText(String.valueOf(folder.getSize()));
         Image cover = folder.getCover();
-        if (cover != null) {
+        if (cover != null && ImagePicker.imageLoader != null) {
             ImagePicker.imageLoader.displayImage(holder.ivCover, cover);
         }
 

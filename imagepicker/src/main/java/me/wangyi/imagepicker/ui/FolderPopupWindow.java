@@ -89,7 +89,7 @@ class FolderPopupWindow extends PopupWindow implements View.OnClickListener {
         ObjectAnimator alpha = ObjectAnimator.ofFloat(mMasker, "alpha", 0, 1);
         ObjectAnimator translationY = ObjectAnimator.ofFloat(mListView, "translationY", mListView.getHeight(), 0);
         AnimatorSet set = new AnimatorSet();
-        set.setDuration(400);
+        set.setDuration(300);
         set.playTogether(alpha, translationY);
         set.setInterpolator(new AccelerateDecelerateInterpolator());
         set.addListener(new Animator.AnimatorListener() {
@@ -120,7 +120,7 @@ class FolderPopupWindow extends PopupWindow implements View.OnClickListener {
         ObjectAnimator alpha = ObjectAnimator.ofFloat(mMasker, "alpha", 1, 0);
         ObjectAnimator translationY = ObjectAnimator.ofFloat(mListView, "translationY", 0, mListView.getHeight());
         AnimatorSet set = new AnimatorSet();
-        set.setDuration(400);
+        set.setDuration(300);
         set.playTogether(alpha, translationY);
         set.setInterpolator(new AccelerateDecelerateInterpolator());
         set.addListener(new Animator.AnimatorListener() {

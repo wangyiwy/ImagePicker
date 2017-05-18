@@ -6,7 +6,8 @@
     <me.wangyi.imagepicker.widget.ImagePager
         android:id="@+id/imagePager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rlBottom" />
 
     <RelativeLayout
         android:id="@+id/rlBottom"

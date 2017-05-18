@@ -36,7 +36,9 @@ public class PreViewAdapter extends PagerAdapter {
         PhotoView photoView = (PhotoView) LayoutInflater.from(container.getContext())
                 .inflate(R.layout.item_preview, container, false);
         Image image = mImageList.get(position);
-        ImagePicker.imageLoader.displayImage(photoView, image);
+        if (ImagePicker.imageLoader!=null){
+            ImagePicker.imageLoader.displayImage(photoView, image);
+        }
         container.addView(photoView);
         return photoView;
     }
