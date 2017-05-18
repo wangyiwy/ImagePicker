@@ -3,7 +3,7 @@ Android 图片选择工具，支持单选/多选/裁剪/预览/相机拍摄，�
 
 [Sample.apk](/demo/sample-debug.apk)
 
-![](/screenshots/20170518151420.png =540*960)
+![](/screenshots/20170518151420.png)
 ![](/screenshots/20170518151409.png)
 ![](/screenshots/20170518151427.png)
 ![](/screenshots/20170518151821.png)
