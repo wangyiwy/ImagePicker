@@ -3,12 +3,12 @@ Android 图片选择工具，支持单选/多选/裁剪/预览/相机拍摄，�
 
 [Sample.apk](/demo/sample-debug.apk)
 
-![](/screenshots/20170518151420.png)
-![](/screenshots/20170518151409.png)
-![](/screenshots/20170518151427.png)
-![](/screenshots/20170518151821.png)
-![](/screenshots/20170518151433.png)
-![](/screenshots/20170518151437.png)
+![](/screenshots/20170518151420.png =300)
+![](/screenshots/20170518151409.png =300)
+![](/screenshots/20170518151427.png =300)
+![](/screenshots/20170518151821.png =300)
+![](/screenshots/20170518151433.png =300)
+![](/screenshots/20170518151437.png =300)
 
 
 #### 添加依赖
