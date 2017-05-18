@@ -26,10 +26,11 @@ import me.wangyi.imagepicker.model.Folder;
  */
 
 class FolderPopupWindow extends PopupWindow implements View.OnClickListener {
-    private List<Folder> mFolderList;
     private ListView mListView;
-    private FolderAdapter mFolderAdapter;
     private View mMasker;
+
+    private List<Folder> mFolderList;
+    private FolderAdapter mFolderAdapter;
     private boolean mAnimRunning = false;
 
     FolderPopupWindow(Context context, @NonNull List<Folder> folderList) {

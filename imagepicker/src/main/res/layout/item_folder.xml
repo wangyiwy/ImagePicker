@@ -14,7 +14,7 @@
         android:layout_width="88dp"
         android:layout_height="88dp"
         android:scaleType="centerCrop"
-        android:src="@color/image_background" />
+        tools:src="@color/image_background" />
 
     <LinearLayout
         android:layout_width="wrap_content"

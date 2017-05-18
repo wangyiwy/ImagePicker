@@ -26,6 +26,7 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.0'
     testCompile 'junit:junit:4.12'
-    compile project(':imagepicker')
+//    compile project(':imagepicker')
     compile 'com.github.bumptech.glide:glide:3.8.0'
+    compile 'me.wangyi:imagepicker:1.0.2'
 }

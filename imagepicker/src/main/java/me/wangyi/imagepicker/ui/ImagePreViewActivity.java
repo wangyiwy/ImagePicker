@@ -34,9 +34,7 @@ public class ImagePreViewActivity extends AppCompatActivity implements ViewPager
     RadioButton rbFullImage;
     CheckBox cbSelect;
     RelativeLayout rlBottom;
-
     ImagePager imagePager;
-    PreViewAdapter mAdapter;
 
     private ArrayList<Image> mImageList;
     private boolean mFullImageEnable = false;
@@ -58,7 +56,7 @@ public class ImagePreViewActivity extends AppCompatActivity implements ViewPager
         cbSelect = (CheckBox) findViewById(R.id.cbSelect);
         rlBottom = (RelativeLayout) findViewById(R.id.rlBottom);
 
-        mAdapter = new PreViewAdapter(mImageList);
+        PreViewAdapter mAdapter = new PreViewAdapter(mImageList);
         imagePager.setAdapter(mAdapter);
         imagePager.addOnPageChangeListener(this);
         rbFullImage.setOnClickListener(this);

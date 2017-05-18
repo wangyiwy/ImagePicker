@@ -25,7 +25,7 @@
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="16dp"
-        app:srcCompat="@drawable/ic_photo_camera_white_36dp" />
+        app:srcCompat="@drawable/ic_camera" />
 
     <RelativeLayout
         android:id="@+id/rlBottom"
@@ -60,7 +60,7 @@
                 android:layout_height="12dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:src="@drawable/ic_signal_cellular_4_bar_grey_900_18dp" />
+                android:src="@drawable/ic_triangle" />
         </LinearLayout>
 
         <TextView

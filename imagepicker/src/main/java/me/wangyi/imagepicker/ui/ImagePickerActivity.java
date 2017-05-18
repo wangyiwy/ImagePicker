@@ -70,11 +70,11 @@ public class ImagePickerActivity extends AppCompatActivity implements View.OnCli
     private ArrayList<Image> mDisplayedImageList = new ArrayList<>();
     private ArrayList<Image> mSelectedImageList = new ArrayList<>();
 
-    private GridView gvImageList;
-    private TextView tvPreView;
-    private TextView tvFolderName;
-    private FolderPopupWindow mPopupWindow;
-    private ImageAdapter mImageAdapter;
+    GridView gvImageList;
+    TextView tvPreView;
+    TextView tvFolderName;
+    FolderPopupWindow mPopupWindow;
+    ImageAdapter mImageAdapter;
 
     /*使用原图*/
     private boolean mFullImageEnable = false;
@@ -115,6 +115,7 @@ public class ImagePickerActivity extends AppCompatActivity implements View.OnCli
 
         mPopupWindow = new FolderPopupWindow(this, mFolderList);
         mPopupWindow.setOnFolderSelectedListener(this);
+
         gvImageList.post(new Runnable() {
             @Override
             public void run() {
@@ -147,7 +148,7 @@ public class ImagePickerActivity extends AppCompatActivity implements View.OnCli
     private void initData() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 == PackageManager.PERMISSION_GRANTED) {
-            getLoaderManager().initLoader(0, null, mLoaderCallbacks);
+            getLoaderManager().initLoader(0, null, new ImageLoaderCallback());
         } else {
             ActivityCompat.requestPermissions(this, new String[]
                     {Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_PERMISSION_SDCARD);
@@ -290,7 +291,7 @@ public class ImagePickerActivity extends AppCompatActivity implements View.OnCli
         return super.onOptionsItemSelected(item);
     }
 
-    private LoaderManager.LoaderCallbacks<Cursor> mLoaderCallbacks = new LoaderManager.LoaderCallbacks<Cursor>() {
+    private class ImageLoaderCallback implements LoaderManager.LoaderCallbacks<Cursor> {
         private final String[] IMAGE_PROJECTION = {
                 MediaStore.Images.Media.DATA,
                 MediaStore.Images.Media.DISPLAY_NAME,
@@ -309,7 +310,6 @@ public class ImagePickerActivity extends AppCompatActivity implements View.OnCli
 
         @Override
         public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-            Log.d(ImagePicker.LOG_TAG, "onLoadFinished start");
             mFolderList.clear();
             mDisplayedImageList.clear();
             ArrayList<Image> allImageList = new ArrayList<>();
@@ -362,9 +362,6 @@ public class ImagePickerActivity extends AppCompatActivity implements View.OnCli
                 mImageAdapter.notifyDataSetChanged();
                 mPopupWindow.notifyDataSetChanged();
                 tvFolderName.setText(folder.getName());
-
-                Log.d(ImagePicker.LOG_TAG, "mFolderList:" + mFolderList.size());
-                Log.d(ImagePicker.LOG_TAG, "onLoadFinished end");
             }
         }
 
@@ -372,7 +369,7 @@ public class ImagePickerActivity extends AppCompatActivity implements View.OnCli
         public void onLoaderReset(Loader<Cursor> loader) {
 
         }
-    };
+    }
 
     /**
      * 图片选中回调
@@ -414,6 +411,8 @@ public class ImagePickerActivity extends AppCompatActivity implements View.OnCli
         intent.setDataAndType(uri, "image/*");
         intent.putExtra("crop", "true");
         intent.putExtra("aspectX", 1);
+        intent.putExtra("scale", true);
+        intent.putExtra("scaleUpIfNeeded", true);
         intent.putExtra("aspectY", 1);
         intent.putExtra("outputX", mCropOutputX);
         intent.putExtra("outputY", mCropOutputY);
@@ -482,7 +481,7 @@ public class ImagePickerActivity extends AppCompatActivity implements View.OnCli
             }
         } else if (requestCode == REQUEST_PERMISSION_SDCARD) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                getLoaderManager().initLoader(0, null, mLoaderCallbacks);
+                getLoaderManager().initLoader(0, null, new ImageLoaderCallback());
             } else {
                 Toast.makeText(this, R.string.no_sdcard_permission, Toast.LENGTH_SHORT).show();
             }

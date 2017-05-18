@@ -36,7 +36,7 @@
 
             <EditText
                 android:id="@+id/etSelectLimit"
-                android:layout_width="50dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:inputType="number"
